@@ -1,0 +1,60 @@
+<div class="content">
+    <!-- <ejs-datepicker class="form-control date" [(ngModel)]='select.date' placeholder='Select a date' [value]='mm/jj/dd' [min]='minDate' [max]='maxDate' required></ejs-datepicker>
+      <br>
+    <ejs-datepicker class="form-control date"  placeholder='Select a date' [value]='value' [min]='minDate' [max]='maxDate' required></ejs-datepicker>
+     <br> -->
+     <form class="form-inline">
+     <div class="form-group">
+       <div class="input-group">
+         <input class="form-control" placeholder="yyyy-mm-dd"
+                name="dp" [(ngModel)]="modelDeb" ngbDatepicker #d="ngbDatepicker" [maxDate]="{year:modelFin.year, month: modelFin.month, day: modelFin.day}">
+         <div class="input-group-append">
+           <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+         </div>
+       </div>
+     </div>
+     <div class="form-group">
+      <div class="input-group">
+        <input class="form-control" placeholder="yyyy-mm-dd"
+               name="dp" [(ngModel)]="modelFin" ngbDatepicker #k="ngbDatepicker" [minDate]="{year:modelDeb.year, month: modelDeb.month, day: modelDeb.day}" >
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary calendar" (click)="k.toggle()" type="button"></button>
+        </div>
+      </div>
+    </div>
+   
+   </form>
+   
+    <select  class="form-control"  [(ngModel)]="select.selectedOption"    required> 
+        <option [ngValue]="null"   disabled  >   Hotels </option>  
+        <option  *ngFor="let department of libelle_hotU" value="{{department.libelle_hot}} "> {{department.libelle_hot}}  </option>  
+   </select>
+   <button type="button" class="btn btn-primary btn-lg active" (click)='onSelect()' > Submit </button>
+  <!-- <form #myForm="ngForm"  novalidate>
+
+    <div class="custom-control custom-radio radio">
+       <input id="Prix" type="radio" checked class="custom-control-input"  value="Prix" >
+       <label class="custom-control-label" for="Prix">Prix</label>
+    </div>
+
+    <div class="custom-control custom-radio radio">
+       <input id="Historique de prix" type="radio" class="custom-control-input" value="Historique de prix" name="data" ngModel>
+       <label class="custom-control-label" for="Historique de prix">Historique de prix</label>
+    </div>
+    <div class="custom-control custom-radio radio">
+      <input id="Cout" type="radio" class="custom-control-input" value="Cout" name="data" ngModel>
+      <label class="custom-control-label" for="Cout">Cout</label>
+   </div>
+   
+  
+ </form> -->
+ <br> <br>
+ <div class="chart">
+  <canvas id="lineChart" > </canvas>
+</div>
+   
+
+
+</div>
+
+

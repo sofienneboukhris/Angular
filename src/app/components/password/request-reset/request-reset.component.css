@@ -1,0 +1,10 @@
+.card{
+    height: 350px;
+    margin-top: 150px;
+    margin-left: 35%;
+    padding-left: 5%;
+    padding-top: 20px; 
+}
+input{
+    width:150px;
+}
